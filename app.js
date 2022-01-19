@@ -16,6 +16,6 @@ app.get("/login", (req,res) => {
     res.sendFile(__dirname + "/views/login.html")
 })
 
-app.listen (3000, () =>{
+app.listen (process.env.PORT || 3000, () =>{
     console.log("server up")
 })
