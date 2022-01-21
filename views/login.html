@@ -9,6 +9,32 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
 
+<style>
+.formulario{
+  padding: 20px 15px;
+}
+.form-contenedor{
+  width:100%;
+  padding: 8px;
+  border-radius:5px;
+  border:0;
+  margin: 1.5% 0px
+}
+
+.form-button{
+  padding:3px;
+  border-radius: 5px;
+  background-color: #1259c3;
+  color: #fff;
+  width: 100%;
+  margin: 1.5% 0px;
+}
+.login form button:hover {
+        background-color: #0022AA;
+}
+
+</style>
+
   <body>
     <header>
       <div class="top-header">
@@ -33,9 +59,9 @@
               <li><a href="#">Ayuda</a></li>
           </ul>
           <ul class="ulder">
-              <li><a href="#">Creá tu cuenta <i class="fas fa-user-circle"></i></a></li>
-              <li><a href="#">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
-              <li><a href="#">Mis compras <i class="fas fa-shopping-cart"></i></a></li>
+            <li><a href="/register">Creá tu cuenta <i class="fas fa-user-circle"></i></a></li>
+            <li><a href="/login">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
+            <li><a href="#">Mis compras <i class="fas fa-shopping-cart"></i></a></li>
           </ul>
           <div class="burger-menu">
               <button class="fondo-boton">
@@ -43,19 +69,18 @@
               </button>
           </div>
       </nav>
-  </header>     
+  </header>
+  <main class="login">
     <form action="/login" method="POST">
-      <p>
-        <label for="usuario">Usuario:</label>        
-        <input type="text" name="usuario" id="usuario"/>
-      </p>
-
-      <p>
-        <label for="contraseña">Contraseña:</label>
-        <input type="password" name="contraseña" id="contraseña" />
-      </p>         
-        <button type="submit">Enviar</button>
+      <div>    
+        <input type="text" name="usuario" id="usuario" placeholder="Usuario" class="form-contenedor"/>
+      </div>
+      <div>
+        <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña" class="form-contenedor"/>
+      </div>         
+        <button type="submit" class="form-button">Enviar</button>
     </form>
+  </main>     
     <footer>
       <section>
           <div><i class="fas fa-credit-card"></i></div>

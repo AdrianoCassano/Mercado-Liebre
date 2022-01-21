@@ -11,32 +11,42 @@ body{
 
 header {
     background-color: #EAC926;
+    padding: 20px;
 }
 
 div.top-header{
     padding: 5%;
-    display:flex; 
+    display: flex;
     flex-wrap: wrap;
 }
 
 header div.logo{
-    flex-grow: 50;
-    width:50%
-}
-
-header div.logo{
+    width:50%;
     padding: 10px;
 }
 
 header div.barra-busqueda{
-    flex-grow: 50;
-    width:50%;
+    padding:2px;
+    width:50%;      
+}
+
+header div form{
+    display:flex;
+}
+header div form input{
+    background-color: #FFF;
+    border-radius: 5px;
+    border: 1px solid #000;
+    color: #666;
+    padding: 8px;
+    width: 100%;
 }
 
 header div.top-header p{
     text-align: center;
     margin-top: 10px;
     width: 100%;
+    font-weight: 400;
 }
 
 header nav{
@@ -44,20 +54,16 @@ header nav{
 }
 
 header nav ul{
-    display:none
-}
-
-header ul li{
+    display:none;
     list-style-type: none;
+    margin: 0px;
+    padding: 0px;
 }
 
-header ul li a{
+header nav a{
     text-decoration: none;
     color: #000;
-}
-
-.burger-menu{
-    text-align: center;
+    padding: 5px 0;
 }
 
 .fondo-boton{
@@ -65,10 +71,16 @@ header ul li a{
     color: #fff;
     border-radius: 5px;
     font-size: 20px;
-    height: 40px;
-    margin: 10px 0px 10px 0px;
-    padding: 10px;
-    width: 40px;
+    padding: 10px 0px;
+    width: 45px;
+    display: block;
+    text-align: center;
+    margin:auto
+}
+
+main{
+    width: 90%;
+    margin:auto;
 }
 
 h1{
@@ -80,10 +92,6 @@ p{
     font-size: 12px;
 }
 
-main{
-    width: 90%;
-    margin:auto;
-}
 
 .ultima-visita{
     display: flex;
@@ -158,10 +166,12 @@ h2{
 }
 
 footer{
+    margin: 1% 0px;
     color: #666;
 }
 footer section {
 text-align: center;
+padding:1%;
 }
 
 footer .fas{
@@ -171,61 +181,109 @@ footer .fas{
 }
 
 @media (min-width: 768px){
+    header .top-header{
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items:center;
+    }
+    header div.logo{
+        width: 30%;
+    }
+    header div.barra-busqueda{
+        width: 30%;
+    }
+    header div.top-header p{
+        width: 40%;
+    }
+
     header nav{
         padding: 20px;
-        display: block;
         display: flex;
         justify-content: space-between;
     }
-
     header nav ul{
-        display:flex;
-        padding: 0 5% 0 5%;
+        display: flex;
+        margin: 0 5px;
+        justify-content: space-between;
     }
 
     header nav li{
-        padding:0 5px 0 5px;
+        margin: 0px 5px;
     }
-    
-    div.top-header{
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-    }
-    
-    .barra-busqueda{
-        min-width: 150px;
-        flex-grow: 50;
-    }
-
-    header div.top-header p{
-        max-width: 250px;
-    } 
+       
 
     header nav div.burger-menu{
         display:none
     }
-
     main section article h2{
         display: block;
     }
-
     main section article{
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
         width: 45%;
         justify-content: space-around;
     }
-   
-    main section div.products{
+       main section div.products{
         flex-wrap: wrap;
     }
-
 }
 
 @media (min-width: 1024px){
+    header .top-header,
+    header nav{
+        max-width: 95%;
+        margin:auto;
+    }
+    .top-header p{
+        max-width: none;
+        font-size: 16px;
+    }
 
+    header nav li{
+        margin: 0px 10px;
+    }
+    header nav a{
+        margin: 0px 10px;
+        font-size: 14px;
+    }
 
     main section article{
         width: 22%;
+        box-shadow:none
     }
+    
+    main section article:hover{
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
+    main section article h2{
+        opacity:0;
+    }
+    main section article:hover h2{
+        opacity:1
+    }
+
+    main section article i:hover{
+        transform: rotate(-90deg);
+        transition-duration: 2s;
+        
+    }
+
+    .footer-container{
+    display:flex;
+    justify-content: space;
+    }
+
+    footer section div i:hover {
+        animation: multicolor 2s;
+    } 
+    @keyframes multicolor{
+        0% {color: #1259c3;}
+        33% {color:#39b54a;}
+        66% {color:#EAC926;}
+        100% {color:#EAC926;}
+        }
+        
+    
+
 }

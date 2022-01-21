@@ -9,6 +9,36 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
 
+<style>
+.formulario{
+  padding: 20px 15px;
+}
+
+.form-control{
+  margin-bottom: 15px;
+}
+
+.label-title{
+  margin-bottom: 10px;
+  display:block;
+  font-weight: bold;
+}
+
+.form-contenedor{
+  width:100%;
+  padding: 8px;
+  border-radius:5px;
+  border:0;
+}
+.form-button{
+  padding:3px;
+  border-radius: 5px;
+  background-color: #1259c3;
+  color: #fff;
+}
+
+</style>
+
   <body>
     <header>
       <div class="top-header">
@@ -33,9 +63,9 @@
               <li><a href="#">Ayuda</a></li>
           </ul>
           <ul class="ulder">
-              <li><a href="#">Creá tu cuenta <i class="fas fa-user-circle"></i></a></li>
-              <li><a href="#">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
-              <li><a href="#">Mis compras <i class="fas fa-shopping-cart"></i></a></li>
+            <li><a href="/register">Creá tu cuenta <i class="fas fa-user-circle"></i></a></li>
+            <li><a href="/login">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
+            <li><a href="#">Mis compras <i class="fas fa-shopping-cart"></i></a></li>
           </ul>
           <div class="burger-menu">
               <button class="fondo-boton">
@@ -43,59 +73,62 @@
               </button>
           </div>
       </nav>
-  </header>      
-    <form action="/register" method="POST">
-      <p>
-        <input type="text" name="nombre" id="nombre" placeholder="Nombre y apellido"/>
-      </p>
-      <p>
-        <input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario"/>
-      </p>
-      <p>
-        <input type="email" name="email" id="email" placeholder="E-mail" <span class="feedback"></span> />
-      </p>      
-      <p>
-          <label for="fechaDeNacimiento">Fecha de nacimiento:</label>
-          <br>
-          <input type="date" name="fechaDeNacimiento" id="fechaDeNacimiento" />
-      </p>
-      <p>
-          <input type="text" name="domicilio" id="domicilio" placeholder="Domicilio"/>
-      </p>
-      <p>          
-          <label for="perfilDelUsuario">Perfil del usuario:</label>
+  </header>
+    <main class="register">
+      <form action="/register" method="POST" class="formulario">
+        <div class="form-control">
+          <input type="text" name="nombre" id="nombre" placeholder="Nombre y apellido" required class="form-contenedor"/>
+        </div>
+        <div class="form-control">
+          <input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario" required class="form-contenedor"/>
+        </div>
+        <div class="form-control">
+          <input type="email" name="email" id="email" placeholder="E-mail" required class="form-contenedor"/>
+        </div>      
+        <div class="form-control">
+          <label for="fechaDeNacimiento" class="label-title">Fecha de nacimiento:</label>
+          <input type="date" name="fechaDeNacimiento" id="fechaDeNacimiento" required  class="form-contenedor"/>
+        </div>
+        <div class="form-control">
+          <input type="text" name="domicilio" id="domicilio" placeholder="Domicilio" required class="form-contenedor"/>
+        </div>
+        <div class="form-control">          
+          <label for="perfilDelUsuario" class="label-title">Perfil del usuario:</label>
           <br>
           <input type="radio" name="perfilDelUsuario" id="perfilDelUsuarioC" value="Comprador"> 
           <label for="perfilDelUsuarioC">Comprador</label>
           <input type="radio" name="perfilDelUsuario" id="perfilDelUsuarioV" value="Vendedor"> Vendedor
-      </p>
-      <p>
-
-          <label for="intereses">Intereses:</label>
-          <br>
+        </div>
+        <div class="form-control">
+          <label for="intereses" class="label-title">Intereses:</label>
           <input type="checkbox" name="intereses" id="intereses1" value="Electro"/> Electro
+          <br>
           <input type="checkbox" name="intereses" id="intereses2" value="Moda" /> Moda
+          <br>
           <input type="checkbox" name="intereses" id="intereses3" value="Hogar" /> Hogar
+          <br>
           <input type="checkbox" name="intereses" id="intereses4" value="Juguetería"/> Juguetería
+          <br>
           <input type="checkbox" name="intereses" id="intereses5" value="Vida sana"/> Vida sana
-      </p>
-      <p>
-
-          <label for="foto">Elegí tu foto de usuario:</label>
-          <input type="file" name="foto" id="foto" accept=".jpg .png" <span class="feedback"></span>/>
-      </p>
-      <p>
-          <input type="password" name="contraseña" id="contraseña" placeholder="Elegí tu Contraseña"/>
-      </p>      
-      <p>
+          <br>
+        </div>
+        <div class="form-control">
+          <label for="foto" class="label-title">Elegí tu foto de usuario:</label>
+          <input type="file" name="foto" id="foto" accept=".jpg .png"/>
+        </div>
+        <div class="form-control">
+          <input type="password" name="contraseña" id="contraseña" placeholder="Elegí tu Contraseña" required  class="form-contenedor"/>
+        </div>      
+        <div class="form-control">
           <input
-            type="password" name="confirmContraseña" id="confirmContraseña" placeholder="Confirmá tu contraseña"/>
-      </p>
-
-        <button type="submit">Enviar</button>
-        <button type="submit">Borrar</button>
-      </p>
-    </form>
+            type="password" name="confirmContraseña" id="confirmaContraseña" placeholder="Confirmá tu contraseña" required  class="form-contenedor"/>
+        </div>
+        <div>
+        <button type="submit" class="form-button">Enviar</button>
+        <button type="submit" class="form-button">Borrar</button>
+        </div>
+      </form>
+    </main>      
     <footer>
       <section>
           <div><i class="fas fa-credit-card"></i></div>
